@@ -60,10 +60,11 @@ void handleGetFruit(HttpRequest request) {
   }
 
   // Find any fruit that start with the 'prefix'
-  final prefix = queryParams['prefix'];
+  var prefix = queryParams['names'];
+
   final matches = fruit
       .where(
-        (item) => item.startsWith(prefix),
+        (item) => item.startsWith(prefix!),
   ).toList();
 
   // Respond based on the matches found
